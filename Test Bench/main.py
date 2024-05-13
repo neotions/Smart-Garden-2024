@@ -52,23 +52,28 @@ class TestBench:
         print("GPIO cleaned up")
         return True
 
+
+
+#### Options ####
+
 # Define Pi Pins
 pins = {
     'moisture' : 17,
     'light' : 27,
 }
 
-# Init Bench Class
-bench = TestBench(pins)
-
-# Time to print out data (seconds)
-streamTime = 10
-
-# Delay between prints
-deplayTime = 1
+streamTime = 10 # Time to print out data (seconds)
+deplayTime = 1 # Delay between prints
 
 
-# Example printing data stream
+#### Init ####
+
+bench = TestBench(pins) # Init Bench Class
+
+
+#### Main #### 
+
+# Print Data Steam
 startTime = time.time()
 while time.time() - startTime < streamTime:
     betterPrint(f"Moisture: {bench.getMoisture()}", "cyan")
