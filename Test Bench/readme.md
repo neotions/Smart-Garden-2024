@@ -2,7 +2,7 @@ Steps to operate test bench:
 
 1. Clone this repo to a Rasberry Pi
 
-2. Swap to your branch (Kartik/John) if you plan on saving local changes 
+2. Swap to your branch if you plan on saving local changes (git checkout Kartik/John) 
 
 3. Navigate to /Test Bench in cmd prompt or open folder in VSCode
 
