@@ -1,6 +1,7 @@
 # Imports
 import requests
 import RPi.GPIO as GPIO
+import time
 
 from helperFunctons import *
 
@@ -49,7 +50,7 @@ class TestBench:
     def __exit__(self):
         GPIO.cleanup()
         print("GPIO cleaned up")
-
+        return True
 
 # Define Pi Pins
 pins = {
@@ -60,4 +61,15 @@ pins = {
 # Init Bench Class
 bench = TestBench(pins)
 
+# Time to print out data (seconds)
+streamTime = 10
 
+# Delay between prints
+deplayTime = 1
+
+
+# Example printing data stream
+startTime = time.time()
+while time.time() - startTime < streamTime:
+    betterPrint(f"Moisture: {bench.getMoisture()}", "cyan")
+    time.sleep(deplayTime)
